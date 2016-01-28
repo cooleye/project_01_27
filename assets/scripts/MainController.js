@@ -15,18 +15,10 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        this.audio = this.node.getComponent(cc.AudioSource);
+
+        var audio = this.node.getComponent(cc.AudioSource);
+        audio.play();
     },
-
-    //monster 被打击动画
-    beHit : function () {
-        this.node.stopAllActions();
-        var action = cc.sequence(cc.rotateTo(0.1,-10,-10),cc.rotateTo(0.1,0,0));
-        this.node.runAction(action);
-
-        this.audio.play();
-    },
-
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
