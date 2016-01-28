@@ -1,0 +1,28 @@
+{
+  "ver": "1.0.0",
+  "uuid": "5cf9ae94-4538-4b8c-b770-61250d653ebc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "wangyi_text_wukongguilai": {
+      "ver": "1.0.2",
+      "uuid": "b80a03d8-4826-4dd3-9439-03b04cf37dad",
+      "rawTextureUuid": "5cf9ae94-4538-4b8c-b770-61250d653ebc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 305,
+      "height": 84,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
