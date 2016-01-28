@@ -2,17 +2,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //    default: null,
-        //    url: cc.Texture2D,  // optional, default is typeof default
-        //    serializable: true, // optional, default is true
-        //    visible: true,      // optional, default is true
-        //    displayName: 'Foo', // optional
-        //    readonly: false,    // optional, default is false
-        // },
-        // ...
-        // uper:Number,
-        // downer:Number,
+
+
     },
 
     // use this for initialization
@@ -22,6 +13,17 @@ cc.Class({
         //监听列表探入弹出事件
         this.node.on('move-up',this.moveUp,this);
         this.node.on('move-down',this.moveDown,this);
+
+        this.audio = this.node.getComponent(cc.AudioSource);
+
+        //this.skillsView = this.node.getChildByName("view_skills");
+        //this.friendsView = this.node.getChildByName('view_friends');
+        //this.storeView = this.node.getChildByName('view_store');
+        this.skillsContent = cc.find('view/content_skills',this.node);
+        this.friendsContent = cc.find('view/content_friends',this.node);
+        this.storeContent = cc.find('view/content_store',this.node);
+
+        this.scrollView = this.node.getComponent(cc.ScrollView);
     },
 
     moveUp:function(){
@@ -30,6 +32,8 @@ cc.Class({
         // moveup.easing(cc.easeIn(0.2));
         this.node.runAction(moveup);
         this.menuState = 'UP';
+
+        this.audio.play('tab_change');
     },
      moveDown:function(){
         this.node.stopAllActions();
@@ -37,5 +41,26 @@ cc.Class({
         this.node.runAction(movedown);
          console.log('menu list move down');
          this.menuState = 'DOWN';
+         //this.audio.play('window_close');
     },
+
+    showSkills: function(){
+        this.skillsContent.active = true;
+        this.friendsContent.active = false;
+        this.storeContent.active = false;
+        this.scrollView.content = this.skillsContent;
+    },
+
+    showFriends : function () {
+        this.skillsContent.active = false;
+        this.friendsContent.active = true;
+        this.storeContent.active = false;
+        this.scrollView.content = this.friendsContent;
+    },
+    showStore : function () {
+        this.skillsContent.active = false;
+        this.friendsContent.active = false;
+        this.storeContent.active = true;
+        this.scrollView.content = this.storeContent;
+    }
 });

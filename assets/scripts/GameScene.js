@@ -1,4 +1,5 @@
 var Monster = require("Monster");
+var Hero = require("Hero");
 
 cc.Class({
     extends: cc.Component,
@@ -16,7 +17,13 @@ cc.Class({
         monster:{
             default:null,
             type:Monster
-        }
+        },
+
+        hero:{
+            default:null,
+            type:Hero
+        },
+
 
     },
 
@@ -41,6 +48,7 @@ cc.Class({
           //播放monster别打击动画
           self.monster.beHit();
 
+          self.hero.heroAction();
 
           //monster掉血
           var value = 0.1;
