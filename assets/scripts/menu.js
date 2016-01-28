@@ -24,17 +24,14 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-      var mainHeroButton = this.node.getChildByName("main_hero");
-      var friendsButton = this.node.getChildByName("friends");
-      var fightButton = this.node.getChildByName("fight");
-      var storeButton = this.node.getChildByName("store");
+      var mainHeroButton = this.mainHeroButton = this.node.getChildByName("main_hero");
+      var friendsButton = this.friendsButton = this.node.getChildByName("friends");
+      var fightButton = this.fightButton = this.node.getChildByName("fight");
+      var storeButton = this.storeButton = this.node.getChildByName("store");
       
       var menuList = this.menuList.getComponent('menulist');
 
-        var realUrl = cc.url.raw("texture/menu_button_press.png");
-        var texture = cc.textureCache.addImage(realUrl);
-
-        var self = this;
+      var self = this;
       mainHeroButton.on(cc.Node.EventType.TOUCH_END, function (event) {
           console.log('hero button click');
           mainHeroButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_press;
@@ -52,7 +49,6 @@ cc.Class({
       }, this);
 
       storeButton.on(cc.Node.EventType.TOUCH_END, function (event) {
-          //storeButton.getComponent(cc.Sprite).initWithFile('assets/texture/menu_button_press.png');
           //menuList.node.emit('move-up');
           //menuList.showStore();
 
@@ -78,6 +74,12 @@ cc.Class({
             self.tips.runAction(action)
         }, this);
     },
+
+    //复位按钮贴图
+    setButtonsNaomal : function () {
+        this.mainHeroButton.getComponent(cc.Sprite).spriteFrame = this.spriteFrame_normal;
+        this.friendsButton.getComponent(cc.Sprite).spriteFrame = this.spriteFrame_normal;
+    }
 
 
     // called every frame, uncomment this function to activate update callback
