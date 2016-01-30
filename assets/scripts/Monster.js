@@ -1,3 +1,5 @@
+var CoinFactory = require('CoinFactory');
+
 cc.Class({
     extends: cc.Component,
 
@@ -29,7 +31,13 @@ cc.Class({
         bombEffect:{
             default:null,
             type:cc.Animation
+        },
+
+        coinFactory:{
+            default:null,
+            type:CoinFactory
         }
+
     },
 
     // use this for initialization
@@ -51,10 +59,12 @@ cc.Class({
     //怪兽掉血
     subBlood : function(value){
 
+        this.blood -= value;
+
         if(this.blood > 0){
-            this.blood -= value;
             this.bloodBar.subProgress(value);
-        }else{
+        }
+        else{
             this.makeNewMonster();
         }
     },
@@ -67,6 +77,8 @@ cc.Class({
 
         this.audio.play();
 
+        this.dropCoins();
+
         //随机一张怪兽贴图
         var texIndex = Math.floor(Math.random()*8);
         var tex = this.monsters[texIndex];
@@ -77,6 +89,12 @@ cc.Class({
         this.bloodBar.subProgressValue(this.blood,name);
 
         this.bloodBar.makeProgressFull();
+    },
+
+    //金币掉落
+    dropCoins: function () {
+
+        this.coinFactory.makeCoins(10);
     }
 
 
