@@ -4,35 +4,37 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //    default: null,
-        //    url: cc.Texture2D,  // optional, default is typeof default
-        //    serializable: true, // optional, default is true
-        //    visible: true,      // optional, default is true
-        //    displayName: 'Foo', // optional
-        //    readonly: false,    // optional, default is false
-        // },
-        // ...
+
+        //怪兽贴图
         monsters:{
             default: [],
             type: [cc.SpriteFrame],
             displayName: '怪兽贴图'
         },
 
+        //怪兽血条
         lifeBar : {
             default:null,
             type:cc.Node,
             displayName:'怪兽血条',
+            //readonly:true,
+        },
+
+        //怪兽血量
+        blood:{
+            default:100,
+            type:Number,
+            displayName:'怪兽血量',
             readonly:true,
         },
 
-        blood:100,
-
+        //爆炸特效
         bombEffect:{
             default:null,
             type:cc.Animation
         },
 
+        //金币工厂
         coinFactory:{
             default:null,
             type:CoinFactory

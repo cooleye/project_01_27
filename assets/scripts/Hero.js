@@ -2,7 +2,58 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        reverse:1,
+
+        //主角昵称
+        heroNickName:{
+            default:'昵称',
+            type:String,
+            displayName:'昵称',
+            readonly:true,
+        },
+        //主角ID
+        heroID:{
+            default:'000000',
+            type:String,
+            displayName:'ID',
+            readonly:true,
+        },
+        //头像
+        heroAvatar:{
+            default:'',
+            type:String,
+            displayName:'头像',
+            readonly:true,
+        },
+        //主角等级
+        heroLevel:{
+            default:1,
+            type:Number,
+            displayName:'等级',
+            readonly:true,
+        },
+
+        //主角金币数量
+        heroMoney:{
+            default:0,
+            type:Number,
+            displayName:'金币',
+            readonly:true,
+        },
+
+        //主角钻石数量
+        heroDiamond:{
+            default:0,
+            type:Number,
+            displayName:'钻石',
+            readonly:true,
+        },
+
+        reverse:{
+            default:1,
+            type:Number,
+            visible:false
+        },
+
     },
 
     // use this for initialization

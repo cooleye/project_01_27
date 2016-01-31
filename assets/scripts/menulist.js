@@ -16,11 +16,9 @@ cc.Class({
 
         this.audio = this.node.getComponent(cc.AudioSource);
 
-        //this.skillsView = this.node.getChildByName("view_skills");
-        //this.friendsView = this.node.getChildByName('view_friends');
-        //this.storeView = this.node.getChildByName('view_store');
         this.skillsContent = cc.find('view/content_skills',this.node);
         this.friendsContent = cc.find('view/content_friends',this.node);
+        this.friends_pkContent = cc.find('view/content_pk',this.node);
         this.storeContent = cc.find('view/content_store',this.node);
 
         this.scrollView = this.node.getComponent(cc.ScrollView);
@@ -39,14 +37,15 @@ cc.Class({
         this.node.stopAllActions();
         var movedown = cc.moveTo(0.2,cc.p(0,0));
         this.node.runAction(movedown);
-         console.log('menu list move down');
-         this.menuState = 'DOWN';
+        console.log('menu list move down');
+        this.menuState = 'DOWN';
          //this.audio.play('window_close');
     },
 
     showSkills: function(){
         this.skillsContent.active = true;
         this.friendsContent.active = false;
+        this.friends_pkContent.active = false;
         this.storeContent.active = false;
         this.scrollView.content = this.skillsContent;
     },
@@ -55,11 +54,20 @@ cc.Class({
         this.skillsContent.active = false;
         this.friendsContent.active = true;
         this.storeContent.active = false;
+        this.friends_pkContent.active = false;
         this.scrollView.content = this.friendsContent;
+    },
+    showFriends_pk : function () {
+        this.skillsContent.active = false;
+        this.friendsContent.active = false;
+        this.friends_pkContent.active = true;
+        this.storeContent.active = false;
+        this.scrollView.content = this.friends_pkContent;
     },
     showStore : function () {
         this.skillsContent.active = false;
         this.friendsContent.active = false;
+        this.friends_pkContent.active = false;
         this.storeContent.active = true;
         this.scrollView.content = this.storeContent;
     }

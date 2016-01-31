@@ -1,16 +1,10 @@
+//var utils = require('Utils');
+
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //    default: null,
-        //    url: cc.Texture2D,  // optional, default is typeof default
-        //    serializable: true, // optional, default is true
-        //    visible: true,      // optional, default is true
-        //    displayName: 'Foo', // optional
-        //    readonly: false,    // optional, default is false
-        // },
-        // ...
+
         coin: {
             default: null,
             type: cc.Prefab,
@@ -18,7 +12,8 @@ cc.Class({
 
         coinArray:{
             default:[],
-            type:cc.Node
+            type:cc.Node,
+            visible:false
         },
 
         coinIcon: {
@@ -31,7 +26,11 @@ cc.Class({
             type: cc.Label
         },
 
-        money:0,
+        money:{
+            default:0,
+            type:Number,
+            visible:false
+        }
 
     },
 
@@ -41,6 +40,7 @@ cc.Class({
     },
     
     makeCoins: function (num) {
+        
 
         var scene = this.node.parent;
 
@@ -48,6 +48,7 @@ cc.Class({
         var self = this;
 
         for(var i = 0;i < num;i++){
+
             var c = cc.instantiate(this.coin);
 
             c.parent = scene;
@@ -69,8 +70,7 @@ cc.Class({
 
             var actionUp = cc.moveTo(0.6,self.coinIcon.position);
             c.runAction(cc.sequence(action2,cc.delayTime(delay5),actionUp,cc.callFunc(function () {
-                self.coinArray.splice(i,1);
-                c.destroy();
+                self.arrayRemove(self.coinArray,c);
                 self.updateCoinString();
             })));
 
@@ -79,16 +79,26 @@ cc.Class({
     },
 
     updateCoinString:function(){
-        console.log(1);
-        console.log(this.coinArray.length);
 
         this.money += 1;
 
         this.coinString.string = this.money;
 
+    },
+
+    arrayRemove: function (arr,e) {
+        var i = indexOf(e);
+        arr.splice(i,1);
+
+        function indexOf(val) {
+            for (var i = 0; i < this.length; i++) {
+                if (this[i] == val) return i;
+            }
+            return -1;
+        }
     }
 
-    // called every frame, uncomment this function to activate update callback
+   // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
 
     // },

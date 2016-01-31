@@ -44,7 +44,6 @@ cc.Class({
       
       this.node.on(cc.Node.EventType.TOUCH_END, function (event) {
 
-          console.log('click');
         //如果列表弹出则收回
         if(menulist.menuState == 'UP'){
             console.log('up');

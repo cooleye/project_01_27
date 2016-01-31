@@ -78,7 +78,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "icon_skill_04",
+    "_name": "icon_avatar",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -139,7 +139,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "6a14a7d0-4537-4897-9186-7783e6fabc30"
+      "__uuid__": "4b855b33-20fb-4015-904b-411b7971f781"
     },
     "_type": 0,
     "_useOriginalSize": false,
@@ -155,7 +155,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "title",
+    "_name": "name",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -220,7 +220,7 @@
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_isSystemFontUsed": true,
-    "_N$string": "吃俺一棒\n",
+    "_N$string": "大圣归来\n",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
@@ -293,7 +293,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "level_num",
+    "_name": "Label",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -358,7 +358,7 @@
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_isSystemFontUsed": true,
-    "_N$string": "100",
+    "_N$string": "1",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 2,
     "_N$overflow": 0
@@ -464,7 +464,7 @@
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_isSystemFontUsed": true,
-    "_N$string": "等待一秒后，直接造成140倍伤害",
+    "_N$string": "",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$overflow": 0
@@ -687,7 +687,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "Label",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -752,7 +752,7 @@
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_isSystemFontUsed": true,
-    "_N$string": "3452",
+    "_N$string": "100\n",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$overflow": 0

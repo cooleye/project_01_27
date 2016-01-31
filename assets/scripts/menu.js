@@ -36,6 +36,7 @@ cc.Class({
           console.log('hero button click');
           mainHeroButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_press;
           friendsButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
+          fightButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
           //发射列表弹入事件
           menuList.node.emit('move-up');
           menuList.showSkills();
@@ -44,6 +45,7 @@ cc.Class({
       friendsButton.on(cc.Node.EventType.TOUCH_END, function (event) {
           mainHeroButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
           friendsButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_press;
+          fightButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
           menuList.node.emit('move-up');
           menuList.showFriends();
       }, this);
@@ -64,14 +66,22 @@ cc.Class({
 
         fightButton.on(cc.Node.EventType.TOUCH_END, function (event) {
 
+            mainHeroButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
+            friendsButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
+            fightButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_press;
+            menuList.node.emit('move-up');
+            menuList.showFriends_pk();
 
-            self.tips.y = 100;
-            self.tips.active = true;
-            self.tips.stopAllActions();
-            var action = cc.sequence(cc.delayTime(1),cc.moveTo(0.2,cc.p(0,150)),cc.callFunc(function () {
-                self.tips.active = false;
-            }));
-            self.tips.runAction(action)
+
+            //self.tips.y = 100;
+            //self.tips.active = true;
+            //self.tips.stopAllActions();
+            //var action = cc.sequence(cc.delayTime(1),cc.moveTo(0.2,cc.p(0,150)),cc.callFunc(function () {
+            //    self.tips.active = false;
+            //}));
+            //self.tips.runAction(action)
+
+
         }, this);
     },
 
