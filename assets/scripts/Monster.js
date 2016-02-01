@@ -40,6 +40,10 @@ cc.Class({
             type:CoinFactory
         },
 
+        boss_die:{
+            default:null,
+            url:cc.AudioClip
+        },
         //怪兽挂掉音效
         monster_die_male:{
             default:null,
@@ -76,7 +80,7 @@ cc.Class({
         }
         else{
             //挂掉
-           // cc.audioEngine.playEffect(this.monster_die_male);
+            cc.audioEngine.playEffect(this.boss_die);
             this.dropCoins();
             this.makeNewMonster();
         }

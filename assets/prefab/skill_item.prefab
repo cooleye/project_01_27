@@ -1033,7 +1033,10 @@
       "__id__": 14
     },
     "coinString": null,
-    "shengji": null
+    "shengji": null,
+    "shengjiAudio": {
+      "__uuid__": "038472ea-180c-4f29-90c0-12cfa2e726f1"
+    }
   },
   {
     "__type__": "cc.PrefabInfo",

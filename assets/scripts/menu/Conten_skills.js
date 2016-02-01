@@ -25,7 +25,16 @@ cc.Class({
         shengji:{
             default:null,
             type:cc.Animation
-        }
+        },
+        shengjiAudio:{
+            default:null,
+            url:cc.AudioClip
+        },
+
+        spriteFrame_disable: {
+            default: null,
+            type: cc.SpriteFrame
+        },
     },
 
     // use this for initialization
@@ -36,6 +45,8 @@ cc.Class({
         this.levelLabel = cc.find('level/Label',this.node).getComponent(cc.Label);
 
         this.avatarShengji = cc.find('icon_avatar/shengji',this.node).getComponent(cc.Animation);
+
+        this.upgrageButtonSprite = this.node.getChildByName('upgrade_button').getComponent(cc.Sprite);
 
         this.initItem(this.hero_level);
 
@@ -70,6 +81,10 @@ cc.Class({
 
             this.shengji.play('shengji');
             this.avatarShengji.play('shengji');
+
+            cc.audioEngine.playEffect(this.shengjiAudio);
+        }else{
+            this.upgrageButtonSprite.spriteFrame = this.spriteFrame_disable;
         }
     }
 });
