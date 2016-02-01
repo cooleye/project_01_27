@@ -71,17 +71,6 @@ cc.Class({
             fightButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_press;
             menuList.node.emit('move-up');
             menuList.showFriends_pk();
-
-
-            //self.tips.y = 100;
-            //self.tips.active = true;
-            //self.tips.stopAllActions();
-            //var action = cc.sequence(cc.delayTime(1),cc.moveTo(0.2,cc.p(0,150)),cc.callFunc(function () {
-            //    self.tips.active = false;
-            //}));
-            //self.tips.runAction(action)
-
-
         }, this);
     },
 
@@ -91,9 +80,4 @@ cc.Class({
         this.friendsButton.getComponent(cc.Sprite).spriteFrame = this.spriteFrame_normal;
     }
 
-
-    // called every frame, uncomment this function to activate update callback
-    // update: function (dt) {
-
-    // },
 });

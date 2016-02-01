@@ -38,15 +38,23 @@ cc.Class({
         coinFactory:{
             default:null,
             type:CoinFactory
-        }
+        },
+
+        //怪兽挂掉音效
+        monster_die_male:{
+            default:null,
+            url:cc.AudioClip
+        },
+        monster_die_famale:{
+            default:null,
+            url:cc.AudioClip
+        },
 
     },
 
     // use this for initialization
     onLoad: function () {
-        this.audio = this.node.getComponent(cc.AudioSource);
         this.bloodBar = this.lifeBar.getComponent('LifeBar');
-
         this.animation = this.node.getComponent(cc.Animation);
     },
 
@@ -67,6 +75,9 @@ cc.Class({
             this.bloodBar.subProgress(value);
         }
         else{
+            //挂掉
+           // cc.audioEngine.playEffect(this.monster_die_male);
+            this.dropCoins();
             this.makeNewMonster();
         }
     },
@@ -74,12 +85,10 @@ cc.Class({
     //产生新的怪
     makeNewMonster: function () {
 
+        //怪兽爆炸特效
         this.bombEffect.node.opacity = 255;
         this.bombEffect.play('monster_bomb');
 
-        this.audio.play();
-
-        this.dropCoins();
 
         //随机一张怪兽贴图
         var texIndex = Math.floor(Math.random()*8);
@@ -95,7 +104,6 @@ cc.Class({
 
     //金币掉落
     dropCoins: function () {
-
         this.coinFactory.makeCoins(10);
     }
 

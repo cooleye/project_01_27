@@ -16,8 +16,9 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
+        //背景音乐
         var audio = this.node.getComponent(cc.AudioSource);
-        audio.play();
+        //audio.play();
 
         this.websocket();
     },

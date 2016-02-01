@@ -78,7 +78,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "icon_skill_04",
+    "_name": "icon_pk",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -139,7 +139,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "577dbcae-5cc4-4d85-b090-68b7b4ac5363"
+      "__uuid__": "f4983a53-f719-45d1-97ec-ebab94087f5a"
     },
     "_type": 0,
     "_useOriginalSize": false,
@@ -151,7 +151,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "b4334hax4JCj4mwEho23CpH"
+    "fileId": "bbf32pC2oVLLqcPDq1Bwc08"
   },
   {
     "__type__": "cc.Node",
@@ -231,7 +231,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "df153gXsOREXYbY2xr2r92F"
+    "fileId": "a1dcbJdDHtG/6G0+oYy0aKh"
   },
   {
     "__type__": "cc.Node",
@@ -369,7 +369,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "e952f8ODn1JM4NZ3s5GrXKl"
+    "fileId": "b7b5bs8PQNBZIcKA7YzQ9Ei"
   },
   {
     "__type__": "cc.Label",
@@ -395,7 +395,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "0a065n6XX1BDY2+LoiMvlwb"
+    "fileId": "4253b7kFLxLaquTiDi79qGX"
   },
   {
     "__type__": "cc.Node",
@@ -475,7 +475,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "34a4eV7EvtKB4J3ooRzfclL"
+    "fileId": "db45eFNu/xCBpoAydE7ORYc"
   },
   {
     "__type__": "cc.Node",
@@ -625,7 +625,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "fc528Zv1SJFz61ItA4b/nTC"
+    "fileId": "85560StttlLjrTcU3FjJuGK"
   },
   {
     "__type__": "cc.Node",
@@ -763,7 +763,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "7887aWhSptLv4Wdkn5m3YSD"
+    "fileId": "44074JLCYpHnYqxdny32RPq"
   },
   {
     "__type__": "cc.Sprite",
@@ -786,7 +786,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "c991eNJyGpJB4WeMpCJ9muj"
+    "fileId": "f7eadtR9mRPNLFNdypNjIbX"
   },
   {
     "__type__": "cc.Widget",
@@ -885,7 +885,7 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "4d67duqWfVDYIbra0mcnqbo"
+    "fileId": "42a92tPWqxEzqSwH+g9+gxw"
   },
   {
     "__type__": "cc.Sprite",
@@ -908,6 +908,6 @@
       "__id__": 1
     },
     "asset": null,
-    "fileId": "e68bb6m/+5FxYHFRdS6GBdK"
+    "fileId": "13d6eUfIaVGZovDeorppr/4"
   }
 ]

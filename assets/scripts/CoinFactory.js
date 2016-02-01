@@ -30,7 +30,17 @@ cc.Class({
             default:0,
             type:Number,
             visible:false
-        }
+        },
+        coinDrop:{
+            default:null,
+            url:cc.AudioClip
+        },
+        coinGain:{
+            default:null,
+            url:cc.AudioClip
+        },
+
+
 
     },
 
@@ -40,7 +50,8 @@ cc.Class({
     },
     
     makeCoins: function (num) {
-        
+
+        cc.audioEngine.playEffect(this.coinDrop);
 
         var scene = this.node.parent;
 
@@ -74,7 +85,6 @@ cc.Class({
                 self.updateCoinString();
             })));
 
-
         }
     },
 
@@ -84,6 +94,7 @@ cc.Class({
 
         this.coinString.string = this.money;
 
+        cc.audioEngine.playEffect(this.coinGain);//收集金币音效
     },
 
     arrayRemove: function (arr,e) {
