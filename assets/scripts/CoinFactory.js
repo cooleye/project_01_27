@@ -1,4 +1,4 @@
-//var utils = require('Utils');
+var Hero = require('Hero');
 
 cc.Class({
     extends: cc.Component,
@@ -26,11 +26,11 @@ cc.Class({
             type: cc.Label
         },
 
-        money:{
-            default:0,
-            type:Number,
-            visible:false
+        hero:{
+            default:null,
+            type:Hero
         },
+
         coinDrop:{
             default:null,
             url:cc.AudioClip
@@ -46,9 +46,17 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        
+
+        this.hero_money = this.hero.heroMoney;
+
+        this.initCoin(this.hero_money);
+
     },
-    
+
+    initCoin: function(value){
+        this.coinString.string = value;
+    },
+
     makeCoins: function (num) {
 
         cc.audioEngine.playEffect(this.coinDrop);
@@ -90,9 +98,12 @@ cc.Class({
 
     updateCoinString:function(){
 
-        this.money += 1;
+        this.hero_money = this.hero.getMoney();
+        this.hero_money +=1;
 
-        this.coinString.string = this.money;
+        this.coinString.string = this.hero_money;
+
+        this.hero.setMoney(this.hero_money);
 
         cc.audioEngine.playEffect(this.coinGain);//收集金币音效
     },

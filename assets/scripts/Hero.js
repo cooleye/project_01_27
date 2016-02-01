@@ -7,45 +7,35 @@ cc.Class({
         heroNickName:{
             default:'昵称',
             type:String,
-            displayName:'昵称',
-            readonly:true,
+            displayName:'昵称'
         },
         //主角ID
         heroID:{
             default:'000000',
             type:String,
-            displayName:'ID',
-            readonly:true,
+            displayName:'ID'
         },
         //头像
         heroAvatar:{
             default:'',
             type:String,
-            displayName:'头像',
-            readonly:true,
+            displayName:'头像'
         },
         //主角等级
         heroLevel:{
-            default:1,
+            default:10,
             type:Number,
-            displayName:'等级',
-            readonly:true,
+            displayName:'等级'
         },
 
         //主角金币数量
-        heroMoney:{
-            default:0,
-            type:Number,
-            displayName:'金币',
-            readonly:true,
-        },
+        heroMoney:100,
 
         //主角钻石数量
         heroDiamond:{
             default:0,
             type:Number,
-            displayName:'钻石',
-            readonly:true,
+            displayName:'钻石'
         },
 
         reverse:{
@@ -59,6 +49,27 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         this.audio = this.node.getComponent(cc.AudioSource);
+    },
+
+    setMoney: function (value) {
+        this.heroMoney = value;
+
+
+    },
+    getMoney: function () {
+      return this.heroMoney;
+    },
+
+    setLevel: function (value) {
+        this.heroLevel = value;
+    },
+
+    getLevel: function () {
+        return this.heroLevel;
+    },
+
+    setDiamon : function (value) {
+        this.heroDiamond = value;
     },
 
     heroAction : function () {

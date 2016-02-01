@@ -38,6 +38,8 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+
+
       var menulist = this.menuList.getComponent('menulist');
 
       var self = this;
@@ -62,6 +64,7 @@ cc.Class({
 
       }, this);
     },
+
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {

@@ -8,6 +8,9 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+
+        this.node.setPosition(cc.p(0,0));
+
         this.menuState = 'DOWN';
 
         //监听列表探入弹出事件
