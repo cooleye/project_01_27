@@ -14,7 +14,7 @@ cc.Class({
         this.node.on('move-up',this.moveUp,this);
         this.node.on('move-down',this.moveDown,this);
 
-        this.audio = this.node.getComponent(cc.AudioSource);
+        //this.audio = this.node.getComponent(cc.AudioSource);
 
         this.skillsContent = cc.find('view/content_skills',this.node);
         this.friendsContent = cc.find('view/content_friends',this.node);
@@ -31,13 +31,13 @@ cc.Class({
         this.node.runAction(moveup);
         this.menuState = 'UP';
 
-        this.audio.play('tab_change');
+        //this.audio.play('tab_change');
     },
      moveDown:function(){
         this.node.stopAllActions();
         var movedown = cc.moveTo(0.2,cc.p(0,0));
         this.node.runAction(movedown);
-        console.log('menu list move down');
+
         this.menuState = 'DOWN';
          //this.audio.play('window_close');
     },

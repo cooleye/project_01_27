@@ -20,6 +20,18 @@ cc.Class({
             default: null,
             type: cc.SpriteFrame
         },
+        buttonClick:{
+            default:null,
+            url:cc.AudioClip
+        },
+        shopClick:{
+            default:null,
+            url:cc.AudioClip
+        },
+        window_close:{
+            default:null,
+            url:cc.AudioClip
+        }
     },
 
     // use this for initialization
@@ -33,13 +45,14 @@ cc.Class({
 
       var self = this;
       mainHeroButton.on(cc.Node.EventType.TOUCH_END, function (event) {
-          console.log('hero button click');
+
           mainHeroButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_press;
           friendsButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
           fightButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
           //发射列表弹入事件
           menuList.node.emit('move-up');
           menuList.showSkills();
+          cc.audioEngine.playEffect(self.buttonClick);
       }, this);
       
       friendsButton.on(cc.Node.EventType.TOUCH_END, function (event) {
@@ -48,6 +61,7 @@ cc.Class({
           fightButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_normal;
           menuList.node.emit('move-up');
           menuList.showFriends();
+          cc.audioEngine.playEffect(self.buttonClick);
       }, this);
 
       storeButton.on(cc.Node.EventType.TOUCH_END, function (event) {
@@ -61,7 +75,7 @@ cc.Class({
               self.tips.active = false;
           }));
           self.tips.runAction(action)
-
+          cc.audioEngine.playEffect(self.shopClick);
       }, this);
 
         fightButton.on(cc.Node.EventType.TOUCH_END, function (event) {
@@ -71,11 +85,13 @@ cc.Class({
             fightButton.getComponent(cc.Sprite).spriteFrame = self.spriteFrame_press;
             menuList.node.emit('move-up');
             menuList.showFriends_pk();
+            cc.audioEngine.playEffect(self.buttonClick);
         }, this);
     },
 
     //复位按钮贴图
     setButtonsNaomal : function () {
+        //cc.audioEngine.playEffect(this.window_close);
         this.mainHeroButton.getComponent(cc.Sprite).spriteFrame = this.spriteFrame_normal;
         this.friendsButton.getComponent(cc.Sprite).spriteFrame = this.spriteFrame_normal;
     }
