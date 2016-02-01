@@ -35,6 +35,8 @@ cc.Class({
 
         this.levelLabel = cc.find('level/Label',this.node).getComponent(cc.Label);
 
+        this.avatarShengji = cc.find('icon_avatar/shengji',this.node).getComponent(cc.Animation);
+
         this.initItem(this.hero_level);
 
         //this.upgradeButton = this.node.getChildByName('upgrade_button');
@@ -67,6 +69,7 @@ cc.Class({
             this.coinString.string = this.hero_money;
 
             this.shengji.play('shengji');
+            this.avatarShengji.play('shengji');
         }
     }
 });

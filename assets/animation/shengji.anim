@@ -3,10 +3,10 @@
   "_name": "shengji",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 0.4166666666666667,
+  "_duration": 0.5,
   "sample": 60,
   "speed": 1,
-  "wrapMode": 1,
+  "wrapMode": 0,
   "curveData": {
     "comps": {
       "cc.Sprite": {
@@ -46,24 +46,39 @@
             "value": {
               "__uuid__": "59199e12-58b2-4f3d-a4b4-51609ea1c699"
             }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "59199e12-58b2-4f3d-a4b4-51609ea1c699"
+            }
           }
         ]
       }
     },
     "props": {
-      "position": [
+      "position": [],
+      "width": [],
+      "opacity": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.03333333333333333,
+          "value": 25
+        },
+        {
+          "frame": 0.08333333333333333,
+          "value": 255
+        },
         {
           "frame": 0.4166666666666667,
-          "value": [
-            17,
-            -175
-          ]
-        }
-      ],
-      "width": [
+          "value": 255
+        },
         {
-          "frame": 0.4166666666666667,
-          "value": 120
+          "frame": 0.5,
+          "value": 0
         }
       ]
     }
