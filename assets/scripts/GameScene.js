@@ -1,5 +1,6 @@
 var Monster = require("Monster");
 var Hero = require("Hero");
+var Menu = require("menu");
 
 cc.Class({
     extends: cc.Component,
@@ -9,29 +10,37 @@ cc.Class({
             default:null,
             type:cc.Node
         },
-        
-        lifeBar:{
-            default:null,
-            type:cc.Node
-        },
+
         monster:{
             default:null,
-            type:Monster
+            type:Monster,
+            visible: true,      // optional, default is true
+            displayName: '怪兽', // optional
+            readonly: true
         },
 
         hero:{
             default:null,
-            type:Hero
+            type:Hero,
+            visible: true,      // optional, default is true
+            displayName: '英雄', // optional
+            readonly: true
         },
+
+        menu : {
+            default:null,
+            type:Menu,
+            viaible:true
+        }
 
 
     },
 
     // use this for initialization
     onLoad: function () {
-      var menulist = this.menuList.getComponent('menulist');
 
-      var LifeBar = this.lifeBar.getComponent('LifeBar');
+
+      var menulist = this.menuList.getComponent('menulist');
 
       var self = this;
       
@@ -39,23 +48,23 @@ cc.Class({
 
         //如果列表弹出则收回
         if(menulist.menuState == 'UP'){
-            console.log('up');
-            //menulist.moveDown();
+
             //发射列表弹出事件
             menulist.node.emit('move-down');
+
         }
 
           //播放monster别打击动画
-          self.monster.beHit();
-
+          self.monster.beHit(10);
+          //主角动画
           self.hero.heroAction();
 
-          //monster掉血
-          var value = 0.1;
-          LifeBar.subProgress(value);
+          //复位按钮
+          self.menu.setButtonsNaomal();
 
       }, this);
     },
+
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
