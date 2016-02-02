@@ -30,7 +30,6 @@ cc.Class({
     moveUp:function(){
         this.node.stopAllActions();
         var moveup = cc.moveTo(0.2,cc.p(0,300));
-        // moveup.easing(cc.easeIn(0.2));
         this.node.runAction(moveup);
         this.menuState = 'UP';
 

@@ -47,9 +47,9 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
-        this.hero_money = this.hero.heroMoney;
+        this.hero_gold = this.hero.heroGold;
 
-        this.initCoin(this.hero_money);
+        this.initCoin(this.hero_gold);
 
     },
 
@@ -62,7 +62,6 @@ cc.Class({
         cc.audioEngine.playEffect(this.coinDrop);
 
         var scene = this.node.parent;
-
 
         var self = this;
 
@@ -81,7 +80,7 @@ cc.Class({
 
             //var action1 = cc.moveBy(0.2,cc.p(cc.randomMinus1To1()*100,Math.random()*50 + 60));
             var action2 = cc.sequence(
-                cc.moveTo(0.3,cc.p(cc.randomMinus1To1()*280,0)),
+                cc.moveTo(0.3,cc.p(cc.randomMinus1To1()*280,-50)),
                 cc.moveBy(0.15,10,50),
                 cc.moveBy(0.15,10,-50),
                 cc.moveBy(0.05,10,10),
@@ -98,12 +97,17 @@ cc.Class({
 
     updateCoinString:function(){
 
-        this.hero_money = this.hero.getMoney();
-        this.hero_money +=1;
+        this.hero_gold = this.hero.getGold();
+        this.hero_gold +=1;
 
-        this.coinString.string = this.hero_money;
+        this.coinString.string = this.hero_gold;
 
-        this.hero.setMoney(this.hero_money);
+        this.hero.setGold(this.hero_gold);
+
+        if(this.coinArray.length <= 0 ){
+            this.hero.sendGoldToServer();
+        }
+
 
         cc.audioEngine.playEffect(this.coinGain);//收集金币音效
     },

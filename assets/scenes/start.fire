@@ -617,6 +617,7 @@
       "__id__": 9
     },
     "_enabled": true,
+    "userID": 0,
     "enter": {
       "__id__": 10
     }

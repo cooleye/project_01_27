@@ -29,7 +29,7 @@ cc.Class({
         },
 
         //主角金币数量
-        heroMoney:100,
+        heroGold:100,
 
         //主角钻石数量
         heroDiamond:{
@@ -51,17 +51,36 @@ cc.Class({
         this.audio = this.node.getComponent(cc.AudioSource);
     },
 
-    setMoney: function (value) {
-        this.heroMoney = value;
-
-
+    setGold: function (value) {
+        this.heroGold = value;
     },
-    getMoney: function () {
-      return this.heroMoney;
+    getGold: function () {
+      return this.heroGold;
+    },
+    sendGoldToServer : function () {
+        //更新玩家金币数
+        var sendObj = {
+            'type' :'addGold',
+            'id' : self.userID,
+            'gold':this.heroGold
+        };
+        var json = JSON.stringify(sendObj);
+        ws.send(json);
+
+        console.log('send gold to sever');
     },
 
     setLevel: function (value) {
         this.heroLevel = value;
+
+        //更新玩家等级
+        var sendObj = {
+            'type' :'addLevel',
+            'id' : self.userID,
+            'level':this.heroLevel
+        };
+        var json = JSON.stringify(sendObj);
+        ws.send(json);
     },
 
     getLevel: function () {

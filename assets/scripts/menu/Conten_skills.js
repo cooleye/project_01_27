@@ -64,20 +64,20 @@ cc.Class({
     * */
     upgradeClick:function(){
 
-        this.hero_money = this.hero.getMoney();
+        this.hero_gold = this.hero.getGold();
         this.hero_level = this.hero.getLevel();
 
 
-        if(this.hero_money >= this.upgrade_cost){
+        if(this.hero_gold >= this.upgrade_cost){
             this.hero_level +=1;
-            this.hero_money -= this.upgrade_cost;
+            this.hero_gold -= this.upgrade_cost;
 
-            this.hero.setMoney(this.hero_money);
+            this.hero.setGold(this.hero_gold);
             this.hero.setLevel(this.hero_level);
 
             this.levelLabel.string = this.hero_level;
 
-            this.coinString.string = this.hero_money;
+            this.coinString.string = this.hero_gold;
 
             this.shengji.play('shengji');
             this.avatarShengji.play('shengji');

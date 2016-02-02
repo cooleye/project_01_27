@@ -48,7 +48,7 @@ cc.Class({
 
         //如果列表弹出则收回
         if(menulist.menuState == 'UP'){
-            console.log('up');
+
             //发射列表弹出事件
             menulist.node.emit('move-down');
 
